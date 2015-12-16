@@ -50,8 +50,10 @@
     <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssetLoader.cs" />
     <Compile Include="GuiTestBehaviour.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="ModUIAssetManager.cs" />
     <Compile Include="MyWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />

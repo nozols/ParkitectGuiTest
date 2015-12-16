@@ -24,13 +24,24 @@ namespace GuiTest
 
         public void onDisabled()
         {
+            _go.GetComponent<AssetLoader>().UnloadAssets();
+
             UnityEngine.Object.Destroy(_go);
         }
 
         public void onEnabled()
         {
             _go = new GameObject();
+            _go.AddComponent<AssetLoader>();
+            _go.GetComponent<AssetLoader>().Path = Path;
+            _go.GetComponent<AssetLoader>().Identifier = Indentifier;
+            _go.GetComponent<AssetLoader>().LoadAssets();
+
             _go.AddComponent<GuiTestBehaviour>();
+            
         }
+
+        public string Path { get; set; }
+        public string Indentifier { get; set; }
     }
 }
