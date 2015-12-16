@@ -1,25 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Parkitect.UI;
 
 namespace GuiTest
 {
     class GuiTestBehaviour : MonoBehaviour
     {
+        public MyWindow mainWindow;
         void Start()
         {
-            Debug.Log("Starting mod");
-            StartCoroutine(SpawnGuests());
+            //ScriptableSingleton<UIAssetManager>.Instance.
+            mainWindow = new MyWindow();
+            Debug.Log("Starting GuiTestBehaviour");
         }
 
-        private IEnumerator SpawnGuests()
+        void Update()
         {
-            for (;;)
+            if (Input.GetKeyDown(KeyCode.F4))
             {
-                Debug.Log("Spawning Guests");
-                GameController.Instance.park.spawnGuest();
-
-                yield return new UnityEngine.WaitForSeconds(1);
+                Debug.Log("Click!");
+                RenameWindow renameWindow = UIWindowsController.Instance.spawnWindowFromPrefab<RenameWindow>(ScriptableSingleton<UIAssetManager>.Instance.renameWindowGO, (object)null);
+                renameWindow.setName("Dit is een test");
             }
-        }
+        }      
     }
 }

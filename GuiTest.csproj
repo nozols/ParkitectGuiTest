@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="GuiTestBehaviour.cs" />
     <Compile Include="Main.cs" />
+    <Compile Include="MyWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>

@@ -1,5 +1,5 @@
 {
-    "BaseDir": "",
+    "BaseDir": ".",
     "EntryPoint": "GuiTest.Main",
     "IsDevelopment": true,
     "Name": "GuiTest",
