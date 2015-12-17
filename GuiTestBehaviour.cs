@@ -6,21 +6,18 @@ namespace GuiTest
 {
     class GuiTestBehaviour : MonoBehaviour
     {
-        public MyWindow mainWindow;
         void Start()
         {
-            //ScriptableSingleton<UIAssetManager>.Instance.
-            mainWindow = new MyWindow();
             Debug.Log("Starting GuiTestBehaviour");
         }
 
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.F4))
+            if (Input.GetKeyDown(KeyCode.F10))
             {
-                Debug.Log("Click!");
+                Debug.Log("Opening Renamewindow");
                 RenameWindow renameWindow = UIWindowsController.Instance.spawnWindowFromPrefab<RenameWindow>(ScriptableSingleton<UIAssetManager>.Instance.renameWindowGO, (object)null);
-                renameWindow.setName("Dit is een test");
+                renameWindow.setName("This is a test");
             }
         }      
     }

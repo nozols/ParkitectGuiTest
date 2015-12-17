@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace GuiTest
 {
@@ -26,47 +27,37 @@ namespace GuiTest
 
                 AssetBundle bundle = www.assetBundle;
                 AssetBundleRequest request = bundle.LoadAssetAsync("Canvas", typeof(GameObject));
-                //yield return request;
                 GameObject obj = request.asset as GameObject;
+                CanvasScaler c = obj.GetComponent<CanvasScaler>();
+                LogComponents(obj);
+                Debug.Log(obj.GetComponent<GameObject>());
+                Debug.Log(c.ToString());
 
-                object[] objs = obj.GetComponents<object>();
-                for(byte i = 0; i < objs.Length; i++)
-                {
-                    Debug.Log(i + ": " + objs[i].ToString());
-                }
-
-                Debug.Log("Creating instance");
+                Debug.Log("Creating instanceof ModUIAssetManager");
                 ScriptableObject.CreateInstance<ModUIAssetManager>();
-                Debug.Log("Doing thing after instance");
-                ScriptableSingleton<ModUIAssetManager>.Instance.myWindowGO = new MyWindow();
-                //ModUIAssetManager.Instance.myWindowGO.windowFrame.setContent(obj.GetComponent(UIWindow));
-
-                //asset = obj.GetComponent<UIWindow>();
-                //Debug.Log(asset.name);
-                //Debug.Log(asset.ToString());
-                //Debug.Log(asset.windowFrame.ToString());
-                //AssetManager.Instance.registerObject(asset);
 
                 bundle.Unload(false);
-                www.Dispose();
-                //w = new UIWindow();
-                        
+                www.Dispose();  
             }
 
             Debug.Log("Finsihed loading assets");
         }
 
+        void LogComponents(GameObject obj) {
+            object[] objs = obj.GetComponents<object>();
+            for (int i = 0; i < objs.Length; i++) {
+                Debug.Log(i + ": " + objs[i].ToString());
+            }
+        }
+
         void Update() {
             if (Input.GetKeyDown(KeyCode.F12)) {
-                Debug.Log("Click!");
-                Debug.Log("Click!");
-                //UIWindow window = UIWindowsController.Instance.spawnWindowFromPrefab<UIWindow>(w, (object)null);
-                //renameWindow.setName("Dit is een test");
+                //Debug.Log("Opening my window");
             }
         }
 
         public void UnloadAssets() {
-           // AssetManager.Instance.unregisterObject(asset);
+           
         }
     }
 }

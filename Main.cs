@@ -37,6 +37,10 @@ namespace GuiTest
             _go.GetComponent<AssetLoader>().Identifier = Indentifier;
             _go.GetComponent<AssetLoader>().LoadAssets();
 
+            _go.AddComponent<MyCanvas>();
+
+            _go.AddComponent<MySkin>();
+
             _go.AddComponent<GuiTestBehaviour>();
             
         }

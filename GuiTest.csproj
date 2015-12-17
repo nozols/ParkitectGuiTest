@@ -54,6 +54,8 @@
     <Compile Include="GuiTestBehaviour.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="ModUIAssetManager.cs" />
+    <Compile Include="MyCanvas.cs" />
+    <Compile Include="MySkin.cs" />
     <Compile Include="MyWindow.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />

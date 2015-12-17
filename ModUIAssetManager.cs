@@ -1,6 +1,8 @@
-﻿namespace GuiTest
+﻿using UnityEngine;
+
+namespace GuiTest
 {
-    class ModUIAssetManager : ScriptableSingleton<ModUIAssetManager>
+    class ModUIAssetManager : ScriptableObject
     {
         public MyWindow myWindowGO;
     }
