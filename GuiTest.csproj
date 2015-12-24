@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="AssetLoader.cs" />
     <Compile Include="GuiTestBehaviour.cs" />
+    <Compile Include="ImageBytes.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="ModUIAssetManager.cs" />
     <Compile Include="MyCanvas.cs" />
